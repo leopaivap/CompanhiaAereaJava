@@ -11,20 +11,15 @@ package projcompanhiaaerea;
  */
 public class Voo {
     private int codVoo;
+    private static int qtdVoos;
     private String origem, destino, dataHoraSaida;
-
-    Voo(){
-        Aeronave aviao = new Aeronave();
+    Aeronave aviao;
+    
+    Voo(Passageiro passageiro, Aeronave aeronave, Aeroporto aeroporto){
+        Voo.qtdVoos = Voo.qtdVoos+1;
+        this.codVoo = qtdVoos;
     }
     
-    public int getCodVoo() {
-        return codVoo;
-    }
-
-    public void setCodVoo(int codVoo) {
-        this.codVoo = codVoo;
-    }
-
     public String getOrigem() {
         return origem;
     }
@@ -49,5 +44,9 @@ public class Voo {
         this.dataHoraSaida = dataHoraSaida;
     }
     
-    
+    void mostraVoo(){
+        System.out.println("Origem: " + getOrigem());
+        System.out.println("Destino: " + getDestino());
+        System.out.println("Data de Saida: " + getDataHoraSaida());
+    }
 }
