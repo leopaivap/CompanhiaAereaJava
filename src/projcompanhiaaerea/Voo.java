@@ -14,14 +14,24 @@ public class Voo {
     private static int qtdVoos;
     private String origem, destino, dataHoraSaida;
     Aeronave aviao;
+    Aeroporto aeroporto;
+    
+    //lista de passageiros sera implementada
     
     Voo(Passageiro passageiro, Aeronave aeronave, Aeroporto aeroporto){
         Voo.qtdVoos = Voo.qtdVoos+1;
         this.codVoo = qtdVoos;
+        this.aeroporto = aeroporto;
+        this.aviao = aeronave;
     }
+    
     
     public String getOrigem() {
         return origem;
+    }
+
+    public int getCodVoo() {
+        return codVoo;
     }
 
     public void setOrigem(String origem) {
@@ -45,8 +55,10 @@ public class Voo {
     }
     
     void mostraVoo(){
-        System.out.println("Origem: " + getOrigem());
-        System.out.println("Destino: " + getDestino());
-        System.out.println("Data de Saida: " + getDataHoraSaida());
+        System.out.println("Origem: " + this.getOrigem());
+        System.out.println("Destino: " + this.getDestino());
+        System.out.println("Data de Saida: " + this.getDataHoraSaida());
+        System.out.println("Aeroporto: " + this.aeroporto.getNomeAeroporto());
+        System.out.println("Aeronave: " + this.aviao.getNomeAviao());
     }
 }

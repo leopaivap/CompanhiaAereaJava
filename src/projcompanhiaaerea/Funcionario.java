@@ -11,8 +11,27 @@ package projcompanhiaaerea;
  */
 public class Funcionario {
     private String nome, cargo, dataNascimento, dataAdmissao; 
-    private int cpf;
+    private int cpf, codFuncionario;
     private double salario;
+    private static int qtdFuncionarios;
+
+    
+    Funcionario(){
+        Funcionario.qtdFuncionarios = Funcionario.qtdFuncionarios+1;
+        this.codFuncionario = qtdFuncionarios;
+    }
+    
+    public static int getQtdFuncionarios() {
+        return qtdFuncionarios;
+    }
+
+    public int getCodFuncionario() {
+        return codFuncionario;
+    }
+
+    public void setCodFuncionario(int codFuncionario) {
+        this.codFuncionario = codFuncionario;
+    }
 
     public String getNome() {
         return nome;
@@ -62,5 +81,12 @@ public class Funcionario {
         this.salario = salario;
     }
     
-    
+    void mostraFuncionario(){
+        System.out.println("Nome Funcionario: " + this.getNome());
+        System.out.println("Cargo: " + this.getCargo());
+        System.out.println("Data de Nascimento: " + this.getDataNascimento());
+        System.out.println("Data de Admissao: " + this.getDataAdmissao());
+        System.out.println("CPF: " + this.getCpf());
+        System.out.println("Salario: R$" + this.getSalario());
+    }
 }
