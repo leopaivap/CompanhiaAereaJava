@@ -2,10 +2,6 @@ package projcompanhiaaerea;
 
 import java.util.Scanner;
 
-/**
- *
- * @author 02210412650
- */
 public class ProjCompanhiaAerea {
   
     public static void main(String[] args) {
@@ -37,6 +33,15 @@ public class ProjCompanhiaAerea {
         passageiro1.setTelefone("(35)90000-0000");
         passageiro1.setDataNascimento("25/03/2023");
         passageiro1.setPesoBagagem(20.8);
+        System.out.println("Passageiro Cadastrado!");
+        
+        Passageiro passageiro2 = new Passageiro();
+        passageiro2.setNome("Passageiro 2");
+        passageiro2.setCpf(2222222);
+        passageiro2.setEmail("passageiro2@email.com");
+        passageiro2.setTelefone("(35)91111-2500");
+        passageiro2.setDataNascimento("20/01/2010");
+        passageiro2.setPesoBagagem(15.1);
         System.out.println("Passageiro Cadastrado!");
         
         //-------------------------------------------------------
@@ -114,6 +119,8 @@ public class ProjCompanhiaAerea {
         voo1.setDataHoraSaida("15/06/2023 20:00:00");
         System.out.println("Voo Cadastrado!");
         
+        passageiro1.addVoo(voo1);
+        passageiro2.addVoo(voo1);
         //--------------------------------------------------------
         
         System.out.println("\n\nTeste:");

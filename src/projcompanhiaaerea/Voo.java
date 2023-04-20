@@ -1,22 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package projcompanhiaaerea;
 
-/**
- *
- * @author 02210412650
- */
+import java.util.ArrayList;
+import java.util.List;
+
 public class Voo {
-    private int codVoo;
+    private final int codVoo;
     private static int qtdVoos;
     private String origem, destino, dataHoraSaida;
     Aeronave aviao;
     Aeroporto aeroporto;
     
-    //lista de passageiros sera implementada
+    List<Passageiro> listaPassageiros = new ArrayList();
     
     Voo(Passageiro passageiro, Aeronave aeronave, Aeroporto aeroporto){
         Voo.qtdVoos = Voo.qtdVoos+1;
@@ -60,5 +54,16 @@ public class Voo {
         System.out.println("Data de Saida: " + this.getDataHoraSaida());
         System.out.println("Aeroporto: " + this.aeroporto.getNomeAeroporto());
         System.out.println("Aeronave: " + this.aviao.getNomeAviao());
+        System.out.println("--------------------------");
+        System.out.println("Passageiros do Voo:\n");
+        for(Passageiro passageiro:listaPassageiros){
+            passageiro.mostraPassageiro();
+            System.out.println("-----------------------");
+        }
     }
+    
+    void addPassageiro(Passageiro passageiro, Voo voo){
+        voo.listaPassageiros.add(passageiro);
+    }
+    
 }
