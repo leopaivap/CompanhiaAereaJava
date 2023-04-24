@@ -1,6 +1,7 @@
 package projcompanhiaaerea;
 
 public class Funcionario extends Pessoa{
+    //campo cargo sera substituido por classes futuramente
     private String  cargo, dataAdmissao; 
     private int  codFuncionario;
     private double salario;

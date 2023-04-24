@@ -46,7 +46,44 @@ public class ProjCompanhiaAerea {
         
         //-------------------------------------------------------
         
-        Aeronave aviao1 = new Aeronave();
+        Funcionario funcionario1 = new Funcionario();
+        /*System.out.println("Cadastro Funcionario:");
+ 
+        
+        System.out.println("Nome Funcionario:");
+        funcionario1.setNome(scan.nextLine());
+        System.out.println("Cargo:");
+        funcionario1.setCargo(scan.nextLine());
+        System.out.println("Data de Nascimento:");
+        funcionario1.setDataNascimento(scan.nextLine());
+        System.out.println("Data de Admissao:");
+        funcionario1.setDataAdmissao(scan.nextLine());
+        System.out.println("CPF:");
+        funcionario1.setCpf(scan.nextInt());
+        System.out.println("Salario:");
+        funcionario1.setSalario(scan.nextDouble());*/
+        
+        funcionario1.setNome("Funcionario 1");
+        funcionario1.setCargo("Guarda");
+        funcionario1.setDataNascimento("01/05/1999");
+        funcionario1.setDataAdmissao("05/04/2018");
+        funcionario1.setCpf(12222222);
+        funcionario1.setSalario(5500.50);
+        System.out.println("Funcionario Cadastrado!");
+        
+        Piloto piloto1 = new Piloto();
+        
+        piloto1.setNome("Piloto 1");
+        piloto1.setCargo("Piloto");
+        piloto1.setDataNascimento("02/07/1959");
+        piloto1.setDataAdmissao("06/08/2015");
+        piloto1.setCpf(555555555);
+        piloto1.setSalario(11500);
+        System.out.println("Piloto Cadastrado!");
+       
+        //------------------------------------------------------
+        
+        Aeronave aviao1 = new Aeronave(piloto1);
         /*System.out.println("Cadastro Aeronave:");
         
         System.out.println("Nome da Aeronave:");
@@ -75,33 +112,7 @@ public class ProjCompanhiaAerea {
         aeroporto1.setNomeAeroporto("Aeroporto 1");
         System.out.println("Aeroporto Cadastrado!");
         
-        //------------------------------------------------------
-        
-        Funcionario funcionario1 = new Funcionario();
-        /*System.out.println("Cadastro Funcionario:");
- 
-        
-        System.out.println("Nome Funcionario:");
-        funcionario1.setNome(scan.nextLine());
-        System.out.println("Cargo:");
-        funcionario1.setCargo(scan.nextLine());
-        System.out.println("Data de Nascimento:");
-        funcionario1.setDataNascimento(scan.nextLine());
-        System.out.println("Data de Admissao:");
-        funcionario1.setDataAdmissao(scan.nextLine());
-        System.out.println("CPF:");
-        funcionario1.setCpf(scan.nextInt());
-        System.out.println("Salario:");
-        funcionario1.setSalario(scan.nextDouble());*/
-        
-        funcionario1.setNome("Funcionario 1");
-        funcionario1.setCargo("Guarda");
-        funcionario1.setDataNascimento("01/05/1999");
-        funcionario1.setDataAdmissao("05/04/2018");
-        funcionario1.setCpf(12222222);
-        funcionario1.setSalario(5500.50);
-        System.out.println("Funcionario Cadastrado!");
-        
+       
         //--------------------------------------------------------
         
         Voo voo1 = new Voo(passageiro1, aviao1, aeroporto1);
@@ -138,6 +149,9 @@ public class ProjCompanhiaAerea {
         System.out.println("\n");
         
         voo1.mostraVoo();
+        System.out.println("\n");
+        
+        piloto1.mostraFuncionario();
         System.out.println("\n");
         
         

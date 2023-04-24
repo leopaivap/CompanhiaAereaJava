@@ -1,15 +1,24 @@
-
 package projcompanhiaaerea;
 
 public class Aeronave {
-    private String nomeAviao; 
+    private String nomeAviao, nomePiloto; 
     private int qtdAssento, codAeronave;
     private double autonomia, capacidadeCarga;
     private static int qtdAeronaves;
+ 
 
-    Aeronave(){
+    Aeronave(Piloto piloto){
         Aeronave.qtdAeronaves = Aeronave.qtdAeronaves+1;
         this.codAeronave = qtdAeronaves;
+        this.nomePiloto = piloto.getNome();
+    }
+
+    public String getNomePiloto() {
+        return nomePiloto;
+    }
+
+    public void setNomePiloto(String nomePiloto) {
+        this.nomePiloto = nomePiloto;
     }
     
     public static int getQtdAeronaves() {
@@ -61,6 +70,7 @@ public class Aeronave {
         System.out.println("Qtd Assentos: " + this.getQtdAssento());
         System.out.println("Capacidade de Carga: " + this.getCapacidadeCarga() + "kg");
         System.out.println("Autonomia: " + this.getAutonomia() + "km");
+        System.out.println("Piloto: " + this.getNomePiloto());
     }
     
 }
