@@ -12,7 +12,7 @@ public class ProjCompanhiaAerea {
         
         //--------------------------------------------------------
         
-        Passageiro passageiro1 = new Passageiro();
+        Passageiro passageiro1 = new Passageiro(21.5);
         /*System.out.println("Cadastro Passageiro: ");
         System.out.println("Nome: ");
         passageiro1.setNome(scan.nextLine());
@@ -35,7 +35,7 @@ public class ProjCompanhiaAerea {
         passageiro1.setPesoBagagem(20.8);
         System.out.println("Passageiro Cadastrado!");
         
-        Passageiro passageiro2 = new Passageiro();
+        Passageiro passageiro2 = new Passageiro(19);
         passageiro2.setNome("Passageiro 2");
         passageiro2.setCpf(2222222);
         passageiro2.setEmail("passageiro2@email.com");

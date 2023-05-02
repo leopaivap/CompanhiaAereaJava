@@ -1,16 +1,27 @@
 package projcompanhiaaerea;
 
-public class Passageiro extends Pessoa{
+public class Passageiro extends Pessoa implements ExcessoCarga{
     private int  codPassageiro;
     private double pesoBagagem;
     private static int qtdPassageiros;
+    private boolean elegivel;
 
     Voo voo;
     //quando a lista de passageiros for implementada na classe voo, um atributo voo sera adicionado na classe Passageiro
     
-     Passageiro(){
+     Passageiro(double pesoBagagem){
         Passageiro.qtdPassageiros = Passageiro.qtdPassageiros+1;
         this.codPassageiro = qtdPassageiros;
+        this.pesoBagagem = pesoBagagem;
+        //taxaPeso(this);
+    }
+
+    public boolean isElegivel() {
+        return elegivel;
+    }
+
+    public void setElegivel(boolean elegivel) {
+        this.elegivel = elegivel;
     }
     
     public static int getQtdPassageiros() {
@@ -45,6 +56,14 @@ public class Passageiro extends Pessoa{
     void addVoo(Voo voo){
         this.voo = voo;
         this.voo.addPassageiro(this, voo);
+    }
+
+    @Override
+    public void taxaPeso(Passageiro p) {
+       if(p.getPesoBagagem() > 20)
+            p.setElegivel(false);
+        p.setElegivel(true);
+       
     }
     
 }
