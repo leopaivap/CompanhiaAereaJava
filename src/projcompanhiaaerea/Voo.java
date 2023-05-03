@@ -3,7 +3,7 @@ package projcompanhiaaerea;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Voo {
+public class Voo{
     private final int codVoo;
     private static int qtdVoos;
     private String origem, destino, dataHoraSaida;
@@ -62,8 +62,12 @@ public class Voo {
         }
     }
     
-    void addPassageiro(Passageiro passageiro, Voo voo){
-        voo.listaPassageiros.add(passageiro);
+    void addPassageiro(Passageiro passageiro){
+        
+        this.listaPassageiros.add(passageiro);
     }
-    
+
 }
+    
+    
+    

@@ -7,13 +7,12 @@ public class Passageiro extends Pessoa implements ExcessoCarga{
     private boolean elegivel;
 
     Voo voo;
-    //quando a lista de passageiros for implementada na classe voo, um atributo voo sera adicionado na classe Passageiro
     
      Passageiro(double pesoBagagem){
         Passageiro.qtdPassageiros = Passageiro.qtdPassageiros+1;
         this.codPassageiro = qtdPassageiros;
         this.pesoBagagem = pesoBagagem;
-        //taxaPeso(this);
+        taxaPeso(this);
     }
 
     public boolean isElegivel() {
@@ -55,15 +54,16 @@ public class Passageiro extends Pessoa implements ExcessoCarga{
     
     void addVoo(Voo voo){
         this.voo = voo;
-        this.voo.addPassageiro(this, voo);
+        this.voo.addPassageiro(this);
     }
 
     @Override
     public void taxaPeso(Passageiro p) {
        if(p.getPesoBagagem() > 20)
             p.setElegivel(false);
+       else
         p.setElegivel(true);
-       
+      
     }
     
 }
